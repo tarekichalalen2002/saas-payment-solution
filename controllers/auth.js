@@ -28,3 +28,8 @@ exports.login = async (req, res) => {
     return res.status(401).json({ message: "Invalid credentials" });
   }
 };
+
+exports.logout = async (req, res) => {
+  res.clearCookie("admintoken");
+  return res.status(200).json({ message: "Logout successful" });
+};
