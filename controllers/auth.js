@@ -33,3 +33,7 @@ exports.logout = async (req, res) => {
   res.clearCookie("admintoken");
   return res.status(200).json({ message: "Logout successful" });
 };
+
+exports.check = async (req, res) => {
+  return res.status(200).json({ message: "Valid token" });
+};

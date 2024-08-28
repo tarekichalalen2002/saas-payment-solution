@@ -8,6 +8,7 @@ const cookieParser = require("cookie-parser");
 const authRoutes = require("./routes/auth");
 const homeRoutes = require("./routes/home");
 const { authMiddleware } = require("./middlewares/authMiddleware");
+const dbConnect = require("./config/dbConnect");
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
@@ -22,5 +23,6 @@ app.use("/api/auth", authRoutes);
 app.use("/home", authMiddleware, homeRoutes);
 
 app.listen(process.env.PORT, () => {
+  dbConnect();
   console.log(`Server is running on port ${process.env.PORT}`);
 });

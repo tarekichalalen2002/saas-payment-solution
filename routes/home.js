@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const path = require("path");
+const homeControllers = require("../controllers/home");
 
-router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/home", "index.html"));
-});
+router.get("/", homeControllers.getHomePage);
+router.get("/subscirptions", homeControllers.getSubscriptions);
+router.post("/subscirptions", homeControllers.createSubscription);
 
 module.exports = router;
