@@ -66,6 +66,9 @@ exports.checkSubscription = async (req, res) => {
     if (!sub) {
       return res.status(404).json({ message: "Subscription not found" });
     }
+    if (!sub.hashedValue) {
+      return res.status(400).json({ message: "Subscription not used yet" });
+    }
     if (sub.hashedValue !== generateHash(code, hashKey)) {
       return res
         .status(400)
