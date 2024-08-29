@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 exports.authMiddleware = async (req, res, next) => {
   const token = req.cookies.admintoken;
   if (!token) {
-    return res.status(401).json({ message: "Unauthorized" });
+    return res.redirect("/api/auth/login");
   }
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
     if (err) {

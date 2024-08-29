@@ -6,9 +6,20 @@
     <link rel="stylesheet" href="/home/styles.css" />
     <title>Home Page</title>
   </head>
-  <body>
+  <body class="text-red-500">
     Hello from home
+    <form id="add-sub-form">
+      <h1>Add Subscription</h1>
+      <input type="text" name="name" placeholder="Name" id="full_name" />
+      <input type="date" name="date" placeholder="Date" id="expiration_date" />
+      <p id="code"></p>
+      <p id="status"></p>
+      <button id="code-generator" type="button">Generate code</button>
 
+      <button type="submit">Add</button>
+    </form>
+
+    <div id="subscriptions-container"></div>
     <script src="/home/script.js"></script>
   </body>
 </html>

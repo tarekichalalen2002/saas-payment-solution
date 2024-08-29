@@ -9,10 +9,6 @@ const subscriptionScheme = new Scheme({
     type: Date,
     required: true,
   },
-  status: {
-    type: String,
-    required: true,
-  },
   used: {
     type: Boolean,
     required: true,
@@ -22,17 +18,12 @@ const subscriptionScheme = new Scheme({
     required: true,
     unique: true,
   },
-  hashKey: {
-    type: String,
-    required: true,
-  },
   createdAt: {
     type: Date,
     default: Date.now,
   },
   hashedValue: {
     type: String,
-    required: true,
     unique: true,
   },
 });
