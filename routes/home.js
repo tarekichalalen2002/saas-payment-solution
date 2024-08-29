@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const path = require("path");
 const homeControllers = require("../controllers/home");
-const { authMiddleware } = require("./middlewares/authMiddleware");
+const { authMiddleware } = require("../middlewares/authMiddleware");
 
 router.get("/", authMiddleware, homeControllers.getHomePage);
 router.get("/subscriptions", authMiddleware, homeControllers.getSubscriptions);
