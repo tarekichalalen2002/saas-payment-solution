@@ -30,13 +30,13 @@
       status = "expired";
     }
     subscirption.innerHTML = `
-        <div class="sub-container">
-          <h3>${sub.full_name}</h3>
-          <p>${sub.expiration_date}</p>
-          <p>${sub.code}</p>
-          <p>${status}</p>
-          <button id="delete-button-${sub._id}" class="delete-sub-button">Delete</button>
-        </div>
+    <div class="sub-container">
+    <h3 class="sub-title">${sub.full_name}</h3>
+    <p class="sub-detail">${sub.expiration_date}</p>
+    <p class="sub-detail">${sub.code}</p>
+    <p class="sub-status ${status}">${status}</p>
+    <button id="delete-button-${sub._id}" class="delete-sub-button">Delete</button>
+  </div>
         `;
     subscirptionsContainer.appendChild(subscirption);
     const deleteButton = document.getElementById(`delete-button-${sub._id}`);

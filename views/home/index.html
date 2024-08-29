@@ -6,20 +6,34 @@
     <link rel="stylesheet" href="/home/styles.css" />
     <title>Home Page</title>
   </head>
-  <body class="text-red-500">
-    Hello from home
-    <form id="add-sub-form">
-      <h1>Add Subscription</h1>
-      <input type="text" name="name" placeholder="Name" id="full_name" />
-      <input type="date" name="date" placeholder="Date" id="expiration_date" />
-      <p id="code"></p>
-      <p id="status"></p>
-      <button id="code-generator" type="button">Generate code</button>
-
-      <button type="submit">Add</button>
-    </form>
-
-    <div id="subscriptions-container"></div>
+  <body class="body">
+    <div class="container">
+      <h1 class="welcome-message">Hello from home</h1>
+      <form id="add-sub-form" class="form">
+        <h2 class="form-title">Add Subscription</h2>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          id="full_name"
+          class="input"
+        />
+        <input
+          type="date"
+          name="date"
+          placeholder="Date"
+          id="expiration_date"
+          class="input"
+        />
+        <p id="code" class="code"></p>
+        <p id="status" class="status"></p>
+        <button id="code-generator" type="button" class="button">
+          Generate code
+        </button>
+        <button type="submit" class="submit-button">Add</button>
+      </form>
+      <div id="subscriptions-container" class="subscriptions-container"></div>
+    </div>
     <script src="/home/script.js"></script>
   </body>
 </html>
