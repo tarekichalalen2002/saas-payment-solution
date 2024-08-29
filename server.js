@@ -7,7 +7,6 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const authRoutes = require("./routes/auth");
 const homeRoutes = require("./routes/home");
-const { authMiddleware } = require("./middlewares/authMiddleware");
 const dbConnect = require("./config/dbConnect");
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -20,7 +19,7 @@ app.use(
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use("/api/auth", authRoutes);
-app.use("/home", authMiddleware, homeRoutes);
+app.use("/home", homeRoutes);
 
 app.listen(process.env.PORT, () => {
   dbConnect();
