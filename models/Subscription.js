@@ -24,7 +24,6 @@ const subscriptionScheme = new Scheme({
   },
   hashedValue: {
     type: String,
-    unique: true,
   },
 });
 
